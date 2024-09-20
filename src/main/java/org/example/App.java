@@ -177,7 +177,6 @@ public class App {
         }
 
         int[] periodArray = new int[timePeriod];
-        double meanPerTimePeriod = 0.0;
         double minTimePeriod = Double.MAX_VALUE;
         int index = 0;
 
@@ -190,7 +189,7 @@ public class App {
                 periodArray[k++] = array[j];
             }
 
-            meanPerTimePeriod = mean(periodArray);              // Beräkna mean för varje timePeriod
+            double meanPerTimePeriod = mean(periodArray);              // Beräkna mean för varje timePeriod
 
             if (meanPerTimePeriod < minTimePeriod) {              // Kolla om denna tidsperiods mean är mindre än tidigare tidsperioder.
                 minTimePeriod = meanPerTimePeriod;
