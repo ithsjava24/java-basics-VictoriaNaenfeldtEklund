@@ -75,6 +75,7 @@ public class App {
      */
     public static void minMaxMean(int[] array) {
 
+        /* // Alternativ 1: hämtar via metoder.
         int min = min(array);
         int max = max(array);
         double mean = mean(array);
@@ -93,33 +94,34 @@ public class App {
         System.out.printf("Lägsta pris: %02d-%02d, %d öre/kWh\n", minIndex, minIndex + 1, min);
         System.out.printf("Högsta pris: %02d-%02d, %d öre/kWh\n", maxIndex, maxIndex + 1, max);
         System.out.printf("Medelpris: %.2f öre/kWh\n", mean);
-
-        /* // Alternativ 2: Allt beräknas i metoden, ej anrop till andra.
-//        int min = Integer.MAX_VALUE;
-//        int max = Integer.MIN_VALUE;
-//        int minIndex = 0;
-//        int maxIndex = 0;
-//        double sum = 0.0;
-//
-//        for (int i = 0; i < array.length; i++) {
-//
-//            if (array[i] < min) {
-//                min = array[i];
-//                minIndex = i;
-//            }
-//
-//            if (array[i] > max) {
-//                max = array[i];
-//                maxIndex = i;
-//            }
-//
-//            sum += array[i];
-//        }
-//
-//        System.out.printf("Lägsta pris: %02d-%02d, %d öre/kWh\n", minIndex, minIndex+1, min);
-//        System.out.printf("Högsta pris: %02d-%02d, %d öre/kWh\n", maxIndex, maxIndex+1, max);
-//        System.out.printf("Medelpris: %.2f öre/kWh\n", sum / array.length);
         */
+
+        // Alternativ 2: Allt beräknas i metoden, ej anrop till andra.
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        int minIndex = 0;
+        int maxIndex = 0;
+        double sum = 0.0;
+
+        for (int i = 0; i < array.length; i++) {
+
+            if (array[i] < min) {
+                min = array[i];
+                minIndex = i;
+            }
+
+            if (array[i] > max) {
+                max = array[i];
+                maxIndex = i;
+            }
+
+            sum += array[i];
+        }
+
+        System.out.printf("Lägsta pris: %02d-%02d, %d öre/kWh\n", minIndex, minIndex+1, min);
+        System.out.printf("Högsta pris: %02d-%02d, %d öre/kWh\n", maxIndex, maxIndex+1, max);
+        System.out.printf("Medelpris: %.2f öre/kWh\n", sum / array.length);
+
     }
 
     /**
