@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 @SuppressWarnings("LanguageDetectionInspection")
@@ -7,6 +8,7 @@ public class App {
 
     public static void main(String[] args) {
 
+        Locale.setDefault(Locale.of("sv", "SE"));
         Scanner scanner = new Scanner(System.in);
         boolean runApplication = true;
 //        int [] pricePerHour = new int[24];
@@ -333,4 +335,5 @@ public class App {
 
         return sum;
     }
+
 }
